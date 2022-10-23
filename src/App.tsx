@@ -31,7 +31,9 @@ function App() {
             {!loading && photoList.length > 0 && (
                 <div className={styles.PhotoContainer}>
                     {photoList.map((item, idx) => (
-                        <Card imageUrl={item.url} key={idx} />
+                        <a href={item.url} target='_blank' key={idx}>
+                            <Card imageUrl={item.url} />
+                        </a>
                     ))}
                 </div>
             )}

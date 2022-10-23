@@ -6,15 +6,13 @@ type PropsCard = {
 
 function Card({ imageUrl }: PropsCard) {
     return (
-        <a href={imageUrl} target='_blank'>
-            <div
-                className={styles.CardContainer}
-                style={{
-                    backgroundImage: `url(${imageUrl})`,
-                    backgroundSize: "cover",
-                }}
-            ></div>
-        </a>
+        <div
+            className={styles.CardContainer}
+            style={{
+                backgroundImage: `url(${imageUrl})`,
+                backgroundSize: "cover",
+            }}
+        ></div>
     );
 }
 export default Card;
