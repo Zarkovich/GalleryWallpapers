@@ -1,0 +1,56 @@
+.AddPhoto {
+    margin-top: 15px;
+
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:hover > .AddButton {
+        color: black;
+        font-size: 6rem;
+    }
+}
+
+.AddButton {
+    position: absolute;
+
+    font-size: 5rem;
+    color: rgba(0, 0, 0, 0.185);
+
+    transition: all 0.1s linear;
+}
+
+.Input {
+    display: none;
+}
+
+.Form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 20px;
+}
+
+.Button {
+    background-color: rgb(204, 204, 204);
+
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
+
+    border-radius: 6px;
+    border: none;
+
+    padding: 5px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s linear;
+
+    &:hover {
+        background-color: rgb(163, 163, 163);
+    }
+}

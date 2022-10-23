@@ -1,0 +1,22 @@
+.PhotoContainer {
+    margin: auto;
+    margin-top: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    max-width: 1200px;
+
+    padding: 5px;
+}
+
+.Title {
+    display: flex;
+    justify-content: center;
+
+    margin: 20px;
+
+    font-size: 3rem;
+}
