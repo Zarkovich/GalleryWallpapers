@@ -30,13 +30,10 @@ function App() {
     function showModal(image: Photo) {
         setPhotoData(image);
         setIsOpenModal(true);
-        console.log(`url = ${photoData.url}  name= ${photoData.name}`);
     }
 
     function closeModal(e: React.MouseEvent<HTMLDivElement>) {
         if (e.currentTarget === e.target) setIsOpenModal(false);
-
-        console.log(e.target);
     }
 
     return (
