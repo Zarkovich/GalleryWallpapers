@@ -1,12 +1,12 @@
-import Card from "./components/Card";
-import "./GlobalStyles.scss";
-import styles from "./App.module.scss";
-import AddCard from "./components/AddCard";
-import { useEffect, useState } from "react";
-import { Photo } from "./types/photo";
-import Loading from "./components/Loading";
-import { getAll } from "./services/photos";
-import ModalImage from "./components/ModalImage";
+import Card from './components/Card';
+import './GlobalStyles.scss';
+import styles from './App.module.scss';
+import AddCard from './components/AddCard';
+import { useEffect, useState } from 'react';
+import { Photo } from './types/photo';
+import Loading from './components/Loading';
+import { deletePhoto, getAll } from './services/photos';
+import ModalImage from './components/ModalImage';
 
 function App() {
     const [loading, setLoading] = useState(false);
@@ -14,8 +14,8 @@ function App() {
     const [isOpenModal, setIsOpenModal] = useState(false);
 
     const [photoData, setPhotoData] = useState({
-        name: "",
-        url: "",
+        name: '',
+        url: '',
     });
 
     useEffect(() => {
@@ -34,6 +34,17 @@ function App() {
 
     function closeModal(e: React.MouseEvent<HTMLDivElement>) {
         if (e.currentTarget === e.target) setIsOpenModal(false);
+    }
+
+    async function deleteButton(
+        e: React.MouseEvent<HTMLParagraphElement>,
+        photo: Photo
+    ) {
+        e.preventDefault();
+
+        await deletePhoto(photo, photoList);
+
+        window.location.reload();
     }
 
     return (
@@ -55,7 +66,7 @@ function App() {
             )}
 
             {!loading && photoList.length === 0 && (
-                <h1 style={{ display: "flex", justifyContent: "center" }}>
+                <h1 style={{ display: 'flex', justifyContent: 'center' }}>
                     Não há foto 😒
                 </h1>
             )}
@@ -65,6 +76,7 @@ function App() {
                     name={photoData.name}
                     url={photoData.url}
                     closeModal={closeModal}
+                    deleteButton={deleteButton}
                 />
             )}
         </div>

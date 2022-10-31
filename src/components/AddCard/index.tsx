@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { uploadAll } from "../../services/photos";
-import Card from "../Card";
-import LoadingButton from "../LoadingIcon";
-import styles from "./style.module.scss";
+import { useState } from 'react';
+import { uploadAll } from '../../services/photos';
+import Card from '../Card';
+import LoadingButton from '../LoadingIcon';
+import styles from './style.module.scss';
 
 function AddCard() {
     const [upLoading, setUploading] = useState(false);
-    const [imagePreview, setImagePreview] = useState("");
+    const [imagePreview, setImagePreview] = useState('');
 
     function preview(e: React.ChangeEvent<HTMLInputElement>) {
         if (e.target.files == null) return;
@@ -19,7 +19,7 @@ function AddCard() {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        const file = formData.get("image") as File;
+        const file = formData.get('image') as File;
 
         if (file && file.size > 0) {
             setUploading(true);
@@ -48,7 +48,7 @@ function AddCard() {
                 />
             </label>
             <button type='submit' className={styles.Button}>
-                {upLoading ? <LoadingButton /> : "Adicionar"}
+                {upLoading ? <LoadingButton /> : 'Adicionar'}
             </button>
         </form>
     );
