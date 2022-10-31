@@ -42,9 +42,15 @@ function App() {
     ) {
         e.preventDefault();
 
+        let filterPhotoList = photoList.filter(
+            (item) => item.name !== photo.name
+        );
+
         await deletePhoto(photo, photoList);
 
-        window.location.reload();
+        setPhotoList(filterPhotoList);
+
+        setIsOpenModal(false);
     }
 
     return (
